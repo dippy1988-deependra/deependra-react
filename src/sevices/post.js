@@ -9,7 +9,7 @@ export const postApi = createApi({
 
         getAllPosts: builder.query({
             query: () => ({
-                url: "posts?_limit=8",
+                url: "posts?_limit=20",
                 method: "GET"
             })
         }),
