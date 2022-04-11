@@ -8,6 +8,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import InboxIcon from '@mui/icons-material/Inbox';
+import { Link } from "react-router-dom";
 
 
 
@@ -37,29 +38,31 @@ export default function Sidebar({ children }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        <Link to="/home">
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
 
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
+              <ListItemText>Home</ListItemText>
 
-            <ListItemText>Home</ListItemText>
+            </ListItemButton>
+          </ListItem>
+        </Link>
 
-          </ListItemButton>
-        </ListItem>
+        <Link to="/about">
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
 
+              <ListItemText>About</ListItemText>
 
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-
-            <ListItemText>About</ListItemText>
-
-          </ListItemButton>
-        </ListItem>
+            </ListItemButton>
+          </ListItem>
+        </Link>
 
         <ListItem disablePadding>
           <ListItemButton>

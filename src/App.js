@@ -7,6 +7,7 @@ import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import Login from './pages/login/Login';
 import { loginContext } from '../src/context/loginContext'
+import { Route, Switch } from 'react-router-dom';
 
 
 function App() {
@@ -36,8 +37,11 @@ function App() {
 
         <Header />
         <Sidebar />
-        {/* <Home /> */}
-        {/* <About/> */}
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/home' component={Home} />
+          <Route path="/about" component={About} />
+        </Switch>
       </loginContext.Provider>
     </div>
 

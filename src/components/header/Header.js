@@ -11,6 +11,10 @@ import { loginContext } from '../../context/loginContext';
 
 export default function Header() {
     const { login, setLogin } = React.useContext(loginContext)
+    function logout(){
+        setLogin(false) 
+        localStorage.clear() 
+    }
     return (
         <div>
             {login === true &&
@@ -28,7 +32,7 @@ export default function Header() {
                                 </IconButton>
                             </Sidebar>
 
-                            <Button color="inherit">Login</Button>
+                            <Button color="inherit" onClick={logout}>Logout</Button>
                         </Toolbar>
                     </AppBar>
                 </Box>
